@@ -1,0 +1,285 @@
+body {
+    background-color: #f3e9d7;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+    cursor: default; 
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+    h1.page1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 52px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background-color: #c2746e;
+        padding: 1px;
+        text-decoration: underline dotted;
+        text-decoration-color: #c1d0b5;
+    }
+
+    h1.page2 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 52px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background-color: #4e6161;
+        padding: 1px;
+        text-decoration: underline dotted;
+        text-decoration-color: #c1d0b5;
+    }
+
+    h1.page3 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 52px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background-color: #8f9e7a;
+        padding: 1px;
+        text-decoration: underline dotted;
+        text-decoration-color: #c1d0b5;
+    }
+
+    body {
+background-color: #f3e9d7;
+font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+
+@keyframes shine-effect {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.3;
+    }
+    10% {
+        opacity: 0.4;
+    }
+    15% {
+        left: 100%;
+        opacity: 0;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: shine-effect 10s linear infinite;
+    pointer-events: none;
+}
+
+header {
+    background-color: #738678;
+    padding: 1px;
+    text-decoration: underline dotted;
+    text-decoration-color: #c1d0b5;
+    text-shadow: 0 0 10px #a8e6ab, 0 0 40px #96ff9f;
+    position: relative;
+}
+
+a {
+    cursor: url('images/cursor.png') 16 16, auto;
+}
+
+.message-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.message {
+    padding: 20px 30px;
+    margin: 15px 0;
+    border-radius: 30px;
+    font-size: 24px;
+    color: #333;
+    max-width: 65%;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    opacity: 0; /* All messages start invisible */
+}
+
+.message.left {
+    background-color: #8cc8ff;
+    border: 2px solid #3b8ea1;
+    float: left;
+    clear: both;
+    margin-left: 8%;
+}
+
+.message.right {
+    background-color: #c4e1a4;
+    border: 2px solid #74b96d;
+    float: right;
+    clear: both;
+    margin-right: 8%;
+}
+
+.message.leftlate {
+    background-color: #8cc8ff;
+    border: 2px solid #3b8ea1;
+    float: left;
+    clear: both;
+    margin-left: 8%;
+}
+
+@keyframes message-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-5px); 
+    }
+    85% {
+        transform: translateY(2px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtle-wobble {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(1px, 1px) rotate(0.2deg);
+    }
+    50% {
+        transform: translate(0px, -1px) rotate(0deg);
+    }
+    75% {
+        transform: translate(-1px, 0px) rotate(-0.2deg);
+    }
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.message.left:nth-of-type(1) {
+    animation: message-appear 0.7s cubic-bezier(0.2, 0.8, 0.2, 1.2) 0.5s forwards;
+}
+
+.message.right:nth-of-type(1) {
+    animation: message-appear 0.7s cubic-bezier(0.2, 0.8, 0.2, 1.2) 1.7s forwards;
+}
+
+.message.leftlate:nth-of-type(1) {
+    animation: message-appear 0.7s cubic-bezier(0.2, 0.8, 0.2, 1.2) 3.2s forwards;
+}
+
+.message:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    animation: floating 3s ease-in-out infinite;
+}
+
+.recipe-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.message::before {
+    content: none;
+}
+
+.message-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.screen-dim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9998;
+}
+
+.cursor-spotlight {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    opacity: 0;
+    transition: width 0.3s, height 0.3s, opacity 0.3s;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+}
+
+.fas.fa-home {
+    font-size: 38px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    color: #acda87;
+    align-items: center;
+    justify-content: center;
+}
+
+.fas.fa-home:hover {
+    transform: scale(1.2); 
+    transition: transform 0.3s ease-in-out; 
+    color: #6cb948;
+}
